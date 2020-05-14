@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    image: 843249697839.dkr.ecr.us-east-1.amazonaws.com/btech/tek-task/hubspot-integrator:dev
+    working_dir: /app
+    container_name: task_synchronzer
+    environment:
+        TEKTASK_BASE_URL: tektaskbaseurl
+        TEKTASK_ORIGIN: tektaskorigin
+        COMPANY_SPACE: companyspace
+        HUBSPOT_BASE_URL: hunspotbaseurl
+        HUBSPOT_APIKEY: hubspotapikey
+        FLASK_ENV: flaskenv
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
